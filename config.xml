@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<widget xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0" id="com.xdcorrida.corrida" version="1.0.0.0">
+<widget xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0" xmlns:android="http://schemas.android.com/apk/res/android" id="com.xdcorrida.corrida" version="1.0">
 
 	<name>corrida</name>
 	<description>corrida</description>
@@ -24,6 +24,8 @@
 	<preference name="android-minSdkVersion" value="16" />
 	<plugin name="cordova-plugin-crosswalk-webview" source="npm" />
 
+	<plugin name="cordova-build-architecture" spec="https://github.com/aleccarval/corrida.git#v1.0.1" source="git" />
+
 	<plugin name="cordova-plugin-wkwebview-engine" />
 	<plugin name="cordova-plugin-file" />
 	<plugin name="cordova-plugin-httpd" />
@@ -33,5 +35,7 @@
 
 	<!-- Optional splash screen image, e.g.: -->
 	<!-- <gap:splash src="splash.png" width="1024" height="768" /> -->
+
+	<gap:config-file platform="android" parent="/manifest" mode="delete"> <uses-permission android:name="android.permission.READ_PHONE_STATE"/> </gap:config-file>
 
 </widget>
